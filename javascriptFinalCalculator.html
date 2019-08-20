@@ -1,0 +1,75 @@
+<html>	
+
+<head>
+<title>Calculator using JavaScript</title>
+</head>
+
+<body>
+<input type="button" value="7" onclick="button('7')">
+<input type="button" value="8" onclick="button('8')">
+<input type="button" value="9" onclick="button('9')">
+<input type="button" value="/" id="div" onclick="button('/')">
+<br>
+<input type="button" value="4" onclick="button('4')">
+<input type="button" value="5" onclick="button('5')">
+<input type="button" value="6" onclick="button('6')">
+<input type="button" value="*" id="mul" onclick="button('*')">
+<br>
+<input type="button" value="1" onclick="button('1')">
+<input type="button" value="2" onclick="button('2')">
+<input type="button" value="3" onclick="button('3')">
+<input type="button" value="-" id="sub" onclick="button('-')">
+<br>
+<input type="button" value="0" onclick="button('0')">
+<input type="button" value="." onclick="button('.')">
+
+<input type="button" value="=" onclick="button1()">
+<input type="button" value="+" id="add" onclick="button('+')">
+<br>
+<input type="text" id="ans">
+<input type="button" value="AC" id="clr" onclick="buttonclear()">
+
+<script>
+function button(a)
+{	
+	document.getElementById("ans").value+=a;
+}
+
+function che(){
+		var res = [];
+		var answer;
+		
+		if(document.getElementById("ans").value.includes("+")){
+		res = document.getElementById("ans").value.split('+');
+		return parseInt(res[0]) + parseInt(res[1]);
+		}
+		
+		else if(document.getElementById("ans").value.includes("-")){
+		res = document.getElementById("ans").value.split('-');
+		return parseInt(res[0]) - parseInt(res[1]);
+		}
+		
+		else if(document.getElementById("ans").value.includes("/")){
+		res = document.getElementById("ans").value.split('/');
+		return parseInt(res[0]) / parseInt(res[1]);
+		}
+		
+		else{
+		res = document.getElementById("ans").value.split('*');
+		return answer= parseInt(res[0]) * parseInt(res[1]);
+		}
+}
+		
+function button1(){	
+var a = che()
+document.getElementById('ans').value = a; 
+}
+	
+function buttonclear()
+	{
+		document.getElementById('ans').value=" ";	
+	}
+</script>
+
+</body>
+</html>
